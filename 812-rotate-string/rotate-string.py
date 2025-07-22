@@ -10,3 +10,5 @@ class Solution(object):
             if arr==goal:
                 return True
         return False
+
+        

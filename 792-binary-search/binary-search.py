@@ -2,8 +2,6 @@ class Solution(object):
     def search(self, nums, target):
         left=0
         right=len(nums)-1
-        if len(nums)==1 and nums[0]==target:
-            return 0
         while left<=right:
             mid=(left+right)//2
             if nums[mid]==target:

@@ -1,9 +1,17 @@
 class Solution(object):
     def groupAnagrams(self, strs):
-        result=defaultdict(list)
-        for s in strs:
-            count=[0]*26
-            for c in s:
-                count[ord(c)-ord('a')]+=1
-            result[tuple(count)].append(s)
-        return result.values()
+        res=[]
+        visited=set()
+        sorted_strs = [''.join(sorted(s)) for s in strs]
+        for i in range(len(strs)):
+            if i in visited:
+                continue
+            list1=[strs[i]]
+            for j in range(i+1,len(strs)):
+                if j not in visited and sorted_strs[i]==sorted_strs[j]:
+                    list1.append(strs[j])
+                    visited.add(j)
+            res.append(list1)
+            visited.add(i)
+        return res
+        

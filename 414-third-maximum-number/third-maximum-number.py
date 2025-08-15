@@ -1,11 +1,9 @@
 class Solution(object):
     def thirdMax(self, nums):
-        list1=set(nums)
-        if len(list1)<3:
+        nums=list(set(nums))
+        nums.sort(reverse=True)
+        if len(nums)>2 :
+            return nums[2] 
+        else:
             return max(nums)
-        list2=[]
-        for num in list1:
-            list2.append(num)
-        list2.sort(reverse=True)
-        return list2[2]
         

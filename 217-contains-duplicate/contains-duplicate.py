@@ -1,8 +1,10 @@
 class Solution(object):
     def containsDuplicate(self, nums):
-        hashset=set()
-        for i in range(len(nums)):
-            if nums[i] in hashset:
+        from collections import defaultdict
+        hashmap=defaultdict(int)
+        for num in nums:
+            hashmap[num]+=1
+            if hashmap[num]>1:
                 return True
-            hashset.add(nums[i])
         return False
+        

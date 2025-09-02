@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+SELECT DISTINCT customer_id,count(Visits.visit_id) count_no_trans from Visits Left JOIN Transactions on Visits.visit_id=Transactions.visit_id where Transactions.transaction_id is null group by Visits.customer_id

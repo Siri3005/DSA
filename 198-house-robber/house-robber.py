@@ -5,7 +5,6 @@ class Solution(object):
         dp[0]=0
         dp[1]=nums[0]
         for i in range(2,n):
-            for j in range(i-1):
-                dp[i]=max(dp[i],nums[i-1]+dp[j])
+            dp[i]=max(dp[i-1],nums[i-1]+dp[i-2])
         return max(dp[-1],dp[-2])
         

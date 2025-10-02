@@ -10,4 +10,5 @@ class Solution(object):
             for i in range(target,num-1,-1):
                 dp[i]=dp[i] or dp[i-num]
         return dp[target]
+
         

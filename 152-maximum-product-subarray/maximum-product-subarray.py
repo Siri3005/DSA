@@ -9,6 +9,6 @@ class Solution(object):
                 max_product,min_product=min_product,max_product
             max_product=max(num,max_product*num)
             min_product=min(num,min_product*num)
+
             ans=max(ans,max_product)
         return ans
-        

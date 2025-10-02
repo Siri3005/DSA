@@ -1,8 +1,8 @@
 class Solution(object):
     def wordBreak(self, s, wordDict):
         n=len(s)
-        wordDict=set(wordDict)
         dp=[False]*(n+1)
+        wordDict=set(wordDict)
         dp[0]=True
         for i in range(1,n+1):
             for j in range(i):
@@ -10,5 +10,4 @@ class Solution(object):
                     dp[i]=True
                     break
         return dp[n]
-
         
